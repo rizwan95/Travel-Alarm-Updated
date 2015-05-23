@@ -1,27 +1,28 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/abc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:id="@+id/abc">
-
-
+    tools:context=".MainActivity">
 
 
     <TextView
+        android:id="@+id/addressTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Address"
-        android:id="@+id/addressTV"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"/>
+        android:text="Enter Address"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
+        android:id="@+id/addressET"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/addressET"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/addressTV"
         android:layout_toRightOf="@+id/addressTV"
@@ -29,77 +30,77 @@
         android:text="1600 Pennsylvania Ave NW Washington DC 20502" />
 
     <Button
+        android:id="@+id/addressButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show Lat/Long"
-        android:id="@+id/addressButton"
         android:layout_below="@+id/addressET"
-        android:layout_toRightOf="@+id/addressTV"
+        android:layout_marginTop="31dp"
         android:layout_toEndOf="@+id/addressTV"
-        android:layout_marginTop="31dp" />
+        android:layout_toRightOf="@+id/addressTV"
+        android:text="Show Lat/Long" />
 
     <EditText
+        android:id="@+id/latLongTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/latLongTV"
         android:layout_below="@+id/textView2"
+        android:layout_toEndOf="@+id/button1"
         android:layout_toRightOf="@+id/button1"
-        android:layout_toEndOf="@+id/button1" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NEXT"
-        android:id="@+id/button1"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="41dp" />
+        android:layout_marginBottom="41dp"
+        android:text="NEXT" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/addressButton"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/addressButton"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
+        android:id="@+id/longgtv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/longgtv"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/button1"
-        android:layout_toEndOf="@+id/button1" />
+        android:layout_toEndOf="@+id/button1"
+        android:layout_toRightOf="@+id/button1" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Latitude"
-        android:id="@+id/textView3"
         android:layout_alignBottom="@+id/latLongTV"
         android:layout_toLeftOf="@+id/button1"
-        android:layout_toStartOf="@+id/button1" />
+        android:layout_toStartOf="@+id/button1"
+        android:text="Latitude"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Longitude"
-        android:id="@+id/textView4"
         android:layout_alignBottom="@+id/longgtv"
         android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3" />
+        android:layout_alignStart="@+id/textView3"
+        android:text="Longitude"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
+        android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send Data"
-        android:id="@+id/send"
         android:layout_above="@+id/button1"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="Send Data" />
 
 
 </RelativeLayout>

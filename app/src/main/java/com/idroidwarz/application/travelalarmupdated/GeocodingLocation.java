@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.content.Intent;
 
 
 import java.io.IOException;
@@ -19,12 +18,12 @@ import java.util.Locale;
 
 public class GeocodingLocation extends Activity {
 
-    double latt , longg;
+    double latt, longg;
 
     private static final String TAG = "GeocodingLocation";
 
-    public  void getAddressFromLocation(final String locationAddress,
-                                        final Context context, final Handler handler) {
+    public void getAddressFromLocation(final String locationAddress,
+                                       final Context context, final Handler handler) {
         Thread thread = new Thread() {
             @Override
             public void run() {
@@ -43,18 +42,15 @@ public class GeocodingLocation extends Activity {
 
                     message.what = 1;
                     Bundle bundle = new Bundle();
-                    result =  latt +"\n"  ;
+                    result = latt + "\n";
                     bundle.putString("address", result);
-                    result1 =  longg +"\n"  ;
-                    bundle.putString("londata",result1);
+                    result1 = longg + "\n";
+                    bundle.putString("londata", result1);
 
                     message.setData(bundle);
 
 
-
                     message.sendToTarget();
-
-
 
 
                 } catch (IOException e) {

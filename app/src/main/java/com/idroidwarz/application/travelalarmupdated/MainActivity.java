@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
     TextView addressTV;
     EditText latLongTV;
     EditText long1;
-    Button button,button1;
+    Button button, button1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
 
         addressTV = (TextView) findViewById(R.id.addressTV);
         latLongTV = (EditText) findViewById(R.id.latLongTV);
-        long1 = (EditText)findViewById(R.id.longgtv);
+        long1 = (EditText) findViewById(R.id.longgtv);
 
 
         addressButton = (Button) findViewById(R.id.addressButton);
@@ -51,35 +51,28 @@ public class MainActivity extends Activity {
         senddata();
 
 
-
     }
 
-    public void senddata()
-    {
+    public void senddata() {
         final Context context = this;
         button1 = (Button) findViewById(R.id.send);
-        button1.setOnClickListener(new OnClickListener()
-        {
+        button1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
 
                 String latdata = latLongTV.getText().toString();
-                String londata= long1.getText().toString();
-                if(latdata != null && !(latdata.equals("")) )
-                {
-                    Intent i =  new Intent(getApplicationContext(),GPSMain.class);
-                    i.putExtra("DATA",latdata);
-                    i.putExtra("DATA2",londata);
+                String londata = long1.getText().toString();
+                if (latdata != null && !(latdata.equals(""))) {
+                    Intent i = new Intent(getApplicationContext(), GPSMain.class);
+                    i.putExtra("DATA", latdata);
+                    i.putExtra("DATA2", londata);
                     startActivity(i);
 
-                }
+                } else {
 
-                else {
-
-                    Toast.makeText(context,"Empty String", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "Empty String", Toast.LENGTH_LONG).show();
 
                 }
-
 
 
             }
@@ -88,9 +81,7 @@ public class MainActivity extends Activity {
     }
 
 
-
-
-    private  class GeocoderHandler extends Handler {
+    private class GeocoderHandler extends Handler {
         @Override
         public void handleMessage(Message message) {
             String locationAddress;
